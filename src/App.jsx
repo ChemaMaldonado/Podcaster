@@ -1,5 +1,3 @@
-import './App.css'
-
 import { AppRoutes } from './routes/AppRoutes'
 import { Layout } from './components/Layout/Layout'
 
