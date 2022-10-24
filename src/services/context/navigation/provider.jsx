@@ -1,6 +1,6 @@
-import { NavigationDispatch, NavigationState } from './Navigation'
+import { NavigationDispatch, NavigationState } from './state'
 
-import { NAVIGATION_MARKER_INACTIVE } from '../../constants/constants'
+import { NAVIGATION_MARKER_INACTIVE } from '../../../constants/constants'
 import { NavigationReducer } from './reducer'
 import React from 'react'
 import { useLocation } from 'react-router-dom'

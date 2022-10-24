@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
 import { fetchPodcasts } from '../../services/api'
 import { useQuery } from 'react-query'
 
-export const PodcastDetailCard = ({ id }) => {
-  const { data: podcasts } = useQuery(['podcasts'], fetchPodcasts)
+export const PodcastDetailCard = ({ id = '' }) => {
+  const { data: podcasts } = useQuery(['podcasts'], fetchPodcasts, { onError: (error) => console.error(error) })
   const podcastDetails = podcasts?.feed?.entry?.filter(podcast => podcast.id.attributes['im:id'] === id)[0]
   return (
     <div className='px-4 xl:w-96'>
@@ -42,4 +43,8 @@ export const PodcastDetailCard = ({ id }) => {
       </div>
     </div>
   )
+}
+
+PodcastDetailCard.propTypes = {
+  id: PropTypes.string
 }

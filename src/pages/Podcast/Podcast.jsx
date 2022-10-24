@@ -9,7 +9,7 @@ export const Podcast = () => {
   const location = useLocation()
   const podcastId = location.pathname.split('/')[2]
 
-  const { data, isLoading } = useQuery(['podcast-id', podcastId], async () => await fetchPodcastsDetails(podcastId))
+  const { data, isLoading } = useQuery(['podcast-id', podcastId], async () => await fetchPodcastsDetails(podcastId), { onError: (error) => console.error(error) })
 
   return (
     <div className='w-full mt-10 flex-col xl:flex xl:flex-row justify-between space-y-10 xl:space-y-0 xl:space-x-10 px-10 xl:px-0'>
