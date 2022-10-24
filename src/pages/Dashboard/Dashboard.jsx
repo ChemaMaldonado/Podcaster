@@ -1,12 +1,13 @@
 import { Loading } from '../../components'
 import { PodcastCard } from './Components'
+import { SearchBar } from './Components/SearchBar/SearchBar'
 import { fetchPodcasts } from '../../services/api'
 import { useQuery } from 'react-query'
 import { useState } from 'react'
 
 export const Dashboard = () => {
   const [query, setQuery] = useState()
-  const { data: podcasts, error, isLoading } = useQuery(['podcasts'], fetchPodcasts)
+  const { data: podcasts, isLoading } = useQuery(['podcasts'], fetchPodcasts, { onError: (error) => console.error(error) })
 
   const filterPodcasts = (podcast) => {
     if (query !== undefined) {
@@ -15,15 +16,10 @@ export const Dashboard = () => {
     }
     return podcast
   }
-
-  if (error !== null) console.error('An error ocurred', error)
-
+  const filteredPodcastNumber = podcasts?.feed?.entry?.filter(filterPodcasts).length
   return (
     <div className='px-10'>
-      <div className='w-full flex justify-center lg:justify-end items-center space-x-5 mt-5'>
-        <span className='bg-blue-400 text-white py-1 px-2 rounded-md'>{podcasts?.feed?.entry?.filter(filterPodcasts).length}</span>
-        <input type='text' onChange={setQuery} className='w-full lg:w-1/3 border border-gray-400 h-10 rounded-md px-5' placeholder='Search by artist or title...' />
-      </div>
+      <SearchBar podCastNumber={filteredPodcastNumber} setQuery={setQuery} />
       {isLoading
         ? <Loading />
         : (

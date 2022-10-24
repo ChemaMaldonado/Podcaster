@@ -9,7 +9,7 @@ export const Episode = () => {
   const location = useLocation()
   const podcastId = location.pathname.split('/')[2]
   const episodeId = location.pathname.split('/')[4]
-  const { data } = useQuery(['podcast-id', podcastId], async () => await fetchPodcastsDetails(podcastId))
+  const { data } = useQuery(['podcast-id', podcastId], async () => await fetchPodcastsDetails(podcastId), { onError: (error) => console.error(error) })
 
   const episodeDetails = data?.results?.filter(episode => (episode.trackId).toString() === episodeId.toString())[0]
   const [trackSrc, setTrackSrc] = useState(episodeDetails?.previewUrl)

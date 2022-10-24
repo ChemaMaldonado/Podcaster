@@ -1,4 +1,4 @@
-import { NAVIGATION_MARKER_ACTIVE, NAVIGATION_MARKER_INACTIVE } from '../../constants/constants'
+import { NAVIGATION_MARKER_ACTIVE, NAVIGATION_MARKER_INACTIVE } from '../../../constants/constants'
 
 export const NavigationReducer = (state, action) => {
   switch (action.type) {
