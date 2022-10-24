@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from 'react-query'
 import App from './App'
 import { BrowserRouter } from 'react-router-dom'
 import { CACHE_TIME } from './constants/constants'
+import { NavigationProvider } from './services/context/provider'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 
@@ -23,7 +24,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
-        <App />
+        <NavigationProvider>
+          <App />
+        </NavigationProvider>
       </BrowserRouter>
     </QueryClientProvider>
   </React.StrictMode>
