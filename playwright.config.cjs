@@ -14,7 +14,7 @@ const { devices } = require('@playwright/test')
 const config = {
   webServer: {
     command: 'npm run build && npm run preview',
-    url: 'https://localhost:4173'
+    url: 'http://localhost:4173'
   },
   testDir: './tests',
   /* Maximum time one test can run for. */
