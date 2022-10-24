@@ -24,13 +24,13 @@ export const EpisodesTable = ({ episodes }) => {
                   scope='col'
                   className='px-6 py-3 text-xs font-bold text-left text-gray-500 uppercase '
                 >
-                  Title
+                  Date
                 </th>
                 <th
                   scope='col'
                   className='px-6 py-3 text-xs font-bold text-left text-gray-500 uppercase '
                 >
-                  Date
+                  Title
                 </th>
               </tr>
             </thead>
@@ -44,11 +44,11 @@ export const EpisodesTable = ({ episodes }) => {
                   <td className='px-6 py-4 text-sm text-gray-800 whitespace-nowrap'>
                     {episode.trackTimeMillis ? convertMsToMinutesSeconds(episode.trackTimeMillis) : '--:--'}
                   </td>
-                  <td className='px-6 py-4 text-sm font-medium text-gray-800 whitespace-nowrap'>
-                    {episode.trackName}
-                  </td>
                   <td className='px-6 py-4 text-sm text-gray-800 whitespace-nowrap'>
                     {formatDate(new Date(episode.releaseDate))}
+                  </td>
+                  <td className='px-6 py-4 text-sm font-medium text-gray-800 whitespace-nowrap'>
+                    {episode.trackName}
                   </td>
                 </tr>
               ))}
