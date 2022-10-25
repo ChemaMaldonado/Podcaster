@@ -1,5 +1,7 @@
 # Podcaster
 This is a web application made in ReactJS to listen to the top 100 most listened podcasts in us.
+![Dashboard view](https://user-images.githubusercontent.com/94164544/197737438-69fa0095-e2b0-446e-bd20-9c56d058d4c9.png)
+
 
 ### Build modes.
 
