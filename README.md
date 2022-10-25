@@ -69,5 +69,10 @@ As specified in the test there are two ways to excecute this project:
 
 - Errors: This is not specifically an improvement but every request and every possible error are handled inside the project. They will be printed out in the console as an error level.
 
-- Develop to free production server: I used vercel platform to deploy the application.
-  Check it out here: ``
+- GitHub Actions: I added a simple github action that get executed each time someone create a pull request or merge to main branch.
+This action is in charge to:
+  1. Linter the code.
+  2. Execute e2e tests.
+
+- Develop to free production server: I used vercel platform to deploy the application. Please keep in mind that this production version is not stable.
+  Check it out here: [Non stable prod server](https://podcaster-ten.vercel.app/)
