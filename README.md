@@ -65,7 +65,7 @@ As specified in the test there are two ways to excecute this project:
 - Responsive design: As an UX & UI I do appreciate when interfaces respond properly to each device sizes.
   The application can be run design properly in mobile, tablets and desktop.
   I used figma for the responsive design. I mix flex and grid throught the project just to show how they can 
-  be combined perfectly.
+  be combined perfectly. An example of a really simple figma design file is provided. [Figma design file](https://www.figma.com/file/THa2rnQawoJAgRf35T6GVR/PodcastDetail?node-id=0%3A1)
 
 - Errors: This is not specifically an improvement but every request and every possible error are handled inside the project. They will be printed out in the console as an error level.
 
