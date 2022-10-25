@@ -12,6 +12,12 @@ export const NavigationProvider = ({ children }) => {
     color: NAVIGATION_MARKER_INACTIVE
   })
 
+  /*
+    This will handle every route change. As it is an SPA changes
+    happen so fast so I addded a timeout in order to make the marker
+    visible for the human eye.
+  */
+
   React.useEffect(() => {
     if (state.pathName && (state.pathName !== location.pathname)) {
       return dispatch({ type: 'routesChanged', payload: { pathName: location.pathname } })
