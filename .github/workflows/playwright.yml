@@ -20,7 +20,7 @@ jobs:
       - name: Lint code
         run: npx standard --fix
       - name: Build
-        run: npm run build
+        run: npm run dev
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
       - name: Run Playwright tests
