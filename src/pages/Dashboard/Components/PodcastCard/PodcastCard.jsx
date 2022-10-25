@@ -11,7 +11,6 @@ export const PodcastCard = ({ author = '', title = '', image = '', id = '' }) =>
               <div className='w-full flex justify-center'>
                 <div className='relative'>
                   <img
-                    alt='podcast-image'
                     src={image}
                     className='shadow-xl rounded-full border-none absolute -ml-14 -m-8 h-[120px] max-w-[500px]'
                   />
